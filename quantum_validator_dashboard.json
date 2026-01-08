@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-01-08T16:44:54.908146",
+  "beacon_chain": {
+    "status": "OK",
+    "count": 6,
+    "validators": [
+      {
+        "index": 4276,
+        "status": "active_online",
+        "balance": 32.012513003,
+        "effectivebalance": 32.0,
+        "slashed": false,
+        "quantum_secured": true
+      },
+      {
+        "index": 4277,
+        "status": "active_online",
+        "balance": 32.012475577,
+        "effectivebalance": 32.0,
+        "slashed": false,
+        "quantum_secured": true
+      },
+      {
+        "index": 4278,
+        "status": "active_online",
+        "balance": 32.107571854,
+        "effectivebalance": 32.0,
+        "slashed": false,
+        "quantum_secured": true
+      },
+      {
+        "index": 4279,
+        "status": "active_online",
+        "balance": 32.012517701,
+        "effectivebalance": 32.0,
+        "slashed": false,
+        "quantum_secured": true
+      },
+      {
+        "index": 4280,
+        "status": "active_online",
+        "balance": 32.059865595,
+        "effectivebalance": 32.0,
+        "slashed": false,
+        "quantum_secured": true
+      },
+      {
+        "index": 4281,
+        "status": "active_online",
+        "balance": 32.012517509,
+        "effectivebalance": 32.0,
+        "slashed": false,
+        "quantum_secured": true
+      }
+    ]
+  },
+  "quantum_metrics": {
+    "quantum_entropy_available": 100,
+    "quantum_secure_mode": true,
+    "quantum_attestations_created": 0,
+    "entanglement_pairs_active": 6,
+    "quantum_computers_online": 3,
+    "total_qubits_available": 445
+  },
+  "validators": [
+    {
+      "index": 4276,
+      "status": "active_online",
+      "balance_eth": 32.0125,
+      "effective_balance_eth": 32.0
+    },
+    {
+      "index": 4277,
+      "status": "checking"
+    },
+    {
+      "index": 4278,
+      "status": "checking"
+    },
+    {
+      "index": 4279,
+      "status": "checking"
+    },
+    {
+      "index": 4280,
+      "status": "checking"
+    },
+    {
+      "index": 4281,
+      "status": "active_online",
+      "balance_eth": 32.0125,
+      "effective_balance_eth": 32.0
+    }
+  ],
+  "status": "quantum_secured",
+  "api_source": "beaconcha.in",
+  "quantum_internet": "active"
+}
