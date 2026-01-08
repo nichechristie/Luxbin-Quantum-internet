@@ -472,12 +472,49 @@ Open http://localhost:8765 and **welcome to the quantum internet.** 🌐⚛️
 
 ---
 
+## 💝 Support This Project
+
+Building the quantum internet takes time and resources. Support development:
+
+### GitHub Sponsors
+⭐ [Sponsor on GitHub](https://github.com/sponsors/mermaidnicheboutique-code)
+
+### Crypto Donations
+Support with cryptocurrency:
+
+**Ethereum / Base / Optimism / Arbitrum:**
+```
+0x[YOUR_ETH_ADDRESS_HERE]
+```
+
+**Bitcoin:**
+```
+[YOUR_BTC_ADDRESS_HERE]
+```
+
+**Solana:**
+```
+[YOUR_SOL_ADDRESS_HERE]
+```
+
+### What Your Support Enables
+- 💻 More quantum computers (expand beyond 3 IBM systems)
+- 🌍 Global quantum node deployment
+- 📚 Better documentation and tutorials
+- 🔬 Research into new quantum protocols
+- 🎓 Educational content and workshops
+- 🚀 Faster development and features
+
+Every contribution helps build the quantum internet! 🙏
+
+---
+
 <div align="center">
 
 **Built with ⚛️ by NicheAI Innovations**
 
 *Redefining the internet, one qubit at a time*
 
-[⭐ Star this repo](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet) • [🐛 Report Bug](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet/issues) • [💡 Request Feature](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet/issues)
+[⭐ Star this repo](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet) • [🐛 Report Bug](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet/issues) • [💡 Request Feature](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet/issues) • [💝 Donate](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet#-support-this-project)
 
 </div>
