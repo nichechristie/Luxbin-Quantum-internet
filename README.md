@@ -2,7 +2,7 @@
 
 **The world's first quantum internet running over consumer WiFi**
 
-[![Status](https://img.shields.io/badge/Status-Live%20%26%20Running-00D4AA?style=for-the-badge&logo=quantum&logoColor=white)](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet) [![IBM Quantum](https://img.shields.io/badge/IBM%20Quantum-445%20Qubits-5942E9?style=for-the-badge&logo=ibm&logoColor=white)](https://quantum.ibm.com/) [![Energy](https://img.shields.io/badge/Energy-99%25%20Less%20Than%20Bitcoin-22C55E?style=for-the-badge&logo=leaf&logoColor=white)](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet)
+[![Status](https://img.shields.io/badge/Status-Live%20%26%20Running-00D4AA?style=for-the-badge&logo=quantum&logoColor=white)](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet) [![IBM Quantum](https://img.shields.io/badge/IBM%20Quantum-445%20Qubits-5942E9?style=for-the-badge&logo=ibm&logoColor=white)](https://quantum.ibm.com/) [![Energy](https://img.shields.io/badge/Energy-99%25%20Less%20Than%20Bitcoin-22C55E?style=for-the-badge&logo=leaf&logoColor=white)](https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18198505-blue?style=for-the-badge&logo=doi&logoColor=white)](https://doi.org/10.5281/zenodo.18198505)
 
 ---
 
@@ -388,6 +388,33 @@ git push origin feature/amazing-feature
 
 ---
 
+## 📖 Citation
+
+If you use this project in your research or work, please cite it:
+
+```bibtex
+@software{christie_luxbin_quantum_internet_2026,
+  author       = {Christie, Nichole},
+  title        = {LUXBIN Quantum Internet: The World's First Quantum Internet Running Over Consumer WiFi},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.18198505},
+  url          = {https://doi.org/10.5281/zenodo.18198505}
+}
+```
+
+**APA Style:**
+```
+Christie, N. (2026). LUXBIN Quantum Internet: The World's First Quantum Internet Running Over Consumer WiFi. Zenodo. https://doi.org/10.5281/zenodo.18198505
+```
+
+**Chicago Style:**
+```
+Christie, Nichole. 2026. "LUXBIN Quantum Internet: The World's First Quantum Internet Running Over Consumer WiFi." Zenodo. https://doi.org/10.5281/zenodo.18198505.
+```
+
+---
+
 ## 📜 License
 
 MIT License - See [LICENSE](LICENSE) file
@@ -476,26 +503,28 @@ Open http://localhost:8765 and **welcome to the quantum internet.** 🌐⚛️
 
 Building the quantum internet takes time and resources. Support development:
 
+### 💰 Crypto Donations (All Chains Supported)
+
+**Smart Wallet Address:**
+```
+0xe1Ba7479eD38bF73B9c8c543959c78cA6EDC97fe
+```
+
+This smart wallet accepts donations on:
+- ⚡ **Ethereum** (ETH, USDC, USDT, any ERC-20)
+- 🔵 **Base** (ETH, LUX, USDC)
+- 🔴 **Optimism** (ETH, USDC, OP)
+- 🔵 **Arbitrum** (ETH, USDC, ARB)
+- 🟣 **Polygon** (MATIC, USDC)
+- 🟡 **BSC** (BNB, BUSD)
+- 🔶 **Avalanche** (AVAX)
+- 💙 **Fantom** (FTM)
+- 🟠 **Bitcoin** (BTC)
+- 🟢 **Solana** (SOL)
+- And **any EVM-compatible chain**
+
 ### GitHub Sponsors
 ⭐ [Sponsor on GitHub](https://github.com/sponsors/mermaidnicheboutique-code)
-
-### Crypto Donations
-Support with cryptocurrency:
-
-**Ethereum / Base / Optimism / Arbitrum:**
-```
-0x[YOUR_ETH_ADDRESS_HERE]
-```
-
-**Bitcoin:**
-```
-[YOUR_BTC_ADDRESS_HERE]
-```
-
-**Solana:**
-```
-[YOUR_SOL_ADDRESS_HERE]
-```
 
 ### What Your Support Enables
 - 💻 More quantum computers (expand beyond 3 IBM systems)
