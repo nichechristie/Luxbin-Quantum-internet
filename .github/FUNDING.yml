@@ -1,5 +1,8 @@
-# Support LUXBIN Quantum Internet Development
-# Help build the world's first quantum internet!
+# Sponsorship & Donation Links for NicheAI Projects
+# These links will appear on all repositories
 
-github: [mermaidnicheboutique-code]
-custom: ['https://github.com/mermaidnicheboutique-code/luxbin-quantum-internet#-support-this-project']
+github: mermaidnicheboutique-code
+
+# Crypto donations (ETH, Base, Polygon, Arbitrum, Optimism, BSC, Avalanche, all EVM chains)
+# Cash App for fiat donations
+custom: ['https://etherscan.io/address/0xe1Ba7479eD38bF73B9c8c543959c78cA6EDC97fe', 'https://cash.app/$mermaidniche']
