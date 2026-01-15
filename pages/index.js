@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Head>
         <title>Quantum Internet | Global Quantum Computing Network</title>
-        <meta name="description" content="22 quantum backends across 7 countries powering LUXBIN Light Language blockchain" />
+        <meta name="description" content="12+ quantum computers across 4 countries powering LUXBIN Light Language blockchain" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -14,7 +14,7 @@ export default function Home() {
         <header className="hero">
           <div className="hero-badge">World's First Global Quantum Superposition</div>
           <h1>Quantum Internet</h1>
-          <p className="tagline">22 quantum backends across 7 countries powering LUXBIN Light Language</p>
+          <p className="tagline">12+ quantum computers across 4 countries powering LUXBIN Light Language</p>
           <div className="hero-buttons">
             <a href="https://github.com/mermaidnicheboutique-code/quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
               View on GitHub
@@ -27,20 +27,20 @@ export default function Home() {
 
         <section className="stats">
           <div className="stat-card">
-            <span className="stat-number">22</span>
-            <span className="stat-label">Quantum Backends</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-number">7</span>
-            <span className="stat-label">Countries</span>
+            <span className="stat-number">12+</span>
+            <span className="stat-label">Quantum Computers</span>
           </div>
           <div className="stat-card">
             <span className="stat-number">4</span>
+            <span className="stat-label">Countries</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-number">3</span>
             <span className="stat-label">Continents</span>
           </div>
           <div className="stat-card">
-            <span className="stat-number">12+</span>
-            <span className="stat-label">Quantum Computers</span>
+            <span className="stat-number">4</span>
+            <span className="stat-label">AI Agents</span>
           </div>
         </section>
 
@@ -49,7 +49,7 @@ export default function Home() {
           <div className="quantum-state">
             <code>Ψ_global = Σ |Hello World!⟩_LUXBIN ⊗ |entangled⟩_international</code>
           </div>
-          <p>"Hello World!" successfully broadcasted in LUXBIN Light Language across 6 countries simultaneously!</p>
+          <p>"Hello World!" successfully broadcasted in LUXBIN Light Language across 4 countries simultaneously!</p>
 
           <div className="achievement-grid">
             <div className="achievement-item">
@@ -74,49 +74,54 @@ export default function Home() {
         <section className="providers">
           <h2>Quantum Providers Connected</h2>
           <div className="provider-grid">
-            <div className="provider-card">
+            <div className="provider-card active">
               <h3>USA</h3>
               <ul>
                 <li>IBM Quantum (156 qubits)</li>
                 <li>IonQ (32 qubits)</li>
                 <li>Rigetti (80 qubits)</li>
-                <li>Google Cirq</li>
               </ul>
             </div>
-            <div className="provider-card">
-              <h3>Finland</h3>
-              <ul>
-                <li>IQM Garnet (20 qubits)</li>
-                <li>IQM Apollo (5 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card">
+            <div className="provider-card active">
               <h3>France</h3>
               <ul>
                 <li>Quandela Cloud (12 qubits)</li>
                 <li>Pasqal Fresnel (20 qubits)</li>
               </ul>
             </div>
-            <div className="provider-card">
+            <div className="provider-card active">
+              <h3>Finland</h3>
+              <ul>
+                <li>IQM Garnet (20 qubits)</li>
+                <li>IQM Apollo (5 qubits)</li>
+              </ul>
+            </div>
+            <div className="provider-card active">
+              <h3>Australia</h3>
+              <ul>
+                <li>Silicon Quantum Computing (4 qubits)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="coming-soon">
+          <h2>Expanding Soon</h2>
+          <div className="provider-grid">
+            <div className="provider-card pending">
               <h3>China</h3>
               <ul>
                 <li>Alibaba Tianti (10 qubits)</li>
                 <li>Baidu QPU (8 qubits)</li>
               </ul>
             </div>
-            <div className="provider-card">
+            <div className="provider-card pending">
               <h3>Japan</h3>
               <ul>
                 <li>RIKEN (64 qubits)</li>
               </ul>
             </div>
-            <div className="provider-card">
-              <h3>Australia</h3>
-              <ul>
-                <li>Silicon Quantum Computing (4 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card">
+            <div className="provider-card pending">
               <h3>UK</h3>
               <ul>
                 <li>AWS Braket OQC (8 qubits)</li>
@@ -367,6 +372,30 @@ export default function Home() {
         .provider-card:hover, .tech-card:hover, .doc-card:hover {
           transform: translateY(-5px);
           border-color: #00d9f5;
+        }
+
+        .provider-card.active {
+          border-color: #00f5a0;
+        }
+
+        .provider-card.active h3::after {
+          content: " ✓";
+          color: #00f5a0;
+        }
+
+        .provider-card.pending {
+          opacity: 0.7;
+          border-style: dashed;
+        }
+
+        .provider-card.pending h3::after {
+          content: " (coming)";
+          font-size: 0.7rem;
+          color: #a0a0c0;
+        }
+
+        .coming-soon h2 {
+          font-size: 2rem;
         }
 
         .provider-card h3, .tech-card h3, .doc-card h3 {
