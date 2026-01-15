@@ -1,0 +1,13 @@
+{
+  "network": "Base Sepolia (Testnet)",
+  "chainId": 84532,
+  "timestamp": "2026-01-14T15:02:53.075Z",
+  "contracts": {
+    "QuantumEntropyOracle": "0x8bcE16Ef26038f8EF673C3261a44230523014D4b",
+    "LuxbinQuantumToken": "0xe1Ba284CC77AD2FB7BC7C225d4A559B8D403Be32"
+  },
+  "urls": {
+    "oracle": "https://sepolia.basescan.org/address/0x8bcE16Ef26038f8EF673C3261a44230523014D4b",
+    "token": "https://sepolia.basescan.org/address/0xe1Ba284CC77AD2FB7BC7C225d4A559B8D403Be32"
+  }
+}

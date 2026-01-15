@@ -1,0 +1,128 @@
+{
+  "quantum_backends": {
+    "ibm": {
+      "backends": [
+        {"name": "ibm_fez", "qubits": 156, "status": "active", "country": "USA"},
+        {"name": "ibm_torino", "qubits": 133, "status": "active", "country": "USA"},
+        {"name": "ibm_marrakesh", "qubits": 156, "status": "active", "country": "USA"}
+      ],
+      "credentials": {
+        "channel": "ibm_quantum_platform",
+        "token_env_var": "QISKIT_IBM_TOKEN"
+      }
+    },
+    "ionq": {
+      "backends": [
+        {"name": "ionq_harmony", "qubits": 11, "status": "active", "country": "USA"},
+        {"name": "ionq_aria", "qubits": 25, "status": "active", "country": "USA"},
+        {"name": "ionq_forte", "qubits": 32, "status": "active", "country": "USA"}
+      ],
+      "credentials": {
+        "api_key_env_var": "IONQ_API_KEY"
+      }
+    },
+    "rigetti": {
+      "backends": [
+        {"name": "rigetti_aspen", "qubits": 80, "status": "active", "country": "USA"}
+      ],
+      "credentials": {
+        "api_key_env_var": "RIGETTI_API_KEY"
+      }
+    },
+    "iqm": {
+      "backends": [
+        {"name": "iqm_garnet", "qubits": 20, "status": "active", "country": "Finland"},
+        {"name": "iqm_apollo", "qubits": 5, "status": "active", "country": "Finland"}
+      ],
+      "credentials": {
+        "api_key_env_var": "IQM_API_KEY"
+      }
+    },
+    "pasqal": {
+      "backends": [
+        {"name": "pasqal_fresnel", "qubits": 20, "status": "active", "country": "France"}
+      ],
+      "credentials": {
+        "api_key_env_var": "PASQAL_API_KEY"
+      }
+    },
+    "quandela": {
+      "backends": [
+        {"name": "quandela_cloud", "qubits": 12, "status": "active", "country": "France"}
+      ],
+      "credentials": {
+        "api_key_env_var": "QUANDELA_API_KEY"
+      }
+    },
+    "alibaba": {
+      "backends": [
+        {"name": "alibaba_tianti", "qubits": 10, "status": "active", "country": "China"}
+      ],
+      "credentials": {
+        "api_key_env_var": "ALIBABA_API_KEY"
+      }
+    },
+    "baidu": {
+      "backends": [
+        {"name": "baidu_qpu", "qubits": 8, "status": "active", "country": "China"}
+      ],
+      "credentials": {
+        "api_key_env_var": "BAIDU_API_KEY"
+      }
+    },
+    "riken": {
+      "backends": [
+        {"name": "riken_superconducting", "qubits": 64, "status": "active", "country": "Japan"}
+      ],
+      "credentials": {
+        "api_key_env_var": "RIKEN_API_KEY"
+      }
+    },
+    "silicon_quantum": {
+      "backends": [
+        {"name": "sqc_hero", "qubits": 4, "status": "active", "country": "Australia"}
+      ],
+      "credentials": {
+        "api_key_env_var": "SQC_API_KEY"
+      }
+    },
+    "cirq": {
+      "backends": [
+        {"name": "cirq_photonic", "qubits": 12, "status": "active", "country": "USA"},
+        {"name": "cirq_simulator", "qubits": 32, "status": "active", "country": "USA"}
+      ],
+      "credentials": {}
+    },
+    "braket": {
+      "backends": [
+        {"name": "braket_ionq", "qubits": 25, "status": "active", "country": "USA"},
+        {"name": "braket_rigetti", "qubits": 84, "status": "active", "country": "USA"},
+        {"name": "braket_oqc", "qubits": 8, "status": "active", "country": "UK"}
+      ],
+      "credentials": {
+        "region_env_var": "AWS_REGION",
+        "profile_env_var": "AWS_PROFILE"
+      }
+    },
+    "azure": {
+      "backends": [
+        {"name": "azure_quantinuum", "qubits": 20, "status": "active", "country": "UK"},
+        {"name": "azure_ionq", "qubits": 29, "status": "active", "country": "USA"}
+      ],
+      "credentials": {
+        "subscription_env_var": "AZURE_SUBSCRIPTION_ID",
+        "resource_env_var": "AZURE_RESOURCE_GROUP"
+      }
+    }
+  },
+  "luxbin_deployment": {
+    "light_language_backends": ["ibm_fez", "ionq_harmony", "rigetti_aspen", "iqm_garnet", "pasqal_fresnel", "quandela_cloud", "alibaba_tianti", "baidu_qpu", "riken_superconducting", "sqc_hero"],
+    "chain_backends": ["ibm_torino", "ibm_marrakesh", "ionq_aria", "iqm_apollo", "pasqal_fresnel"],
+    "internet_backends": ["ibm_fez", "ibm_torino", "ibm_marrakesh", "ionq_harmony", "ionq_aria", "ionq_forte", "rigetti_aspen", "iqm_garnet", "iqm_apollo", "pasqal_fresnel", "quandela_cloud", "alibaba_tianti", "baidu_qpu", "riken_superconducting", "sqc_hero", "cirq_photonic", "cirq_simulator", "braket_ionq", "braket_rigetti", "braket_oqc", "azure_quantinuum", "azure_ionq"]
+  },
+  "international_network": {
+    "countries": ["USA", "Finland", "France", "China", "Japan", "Australia", "UK"],
+    "continents": ["North America", "Europe", "Asia", "Oceania"],
+    "timezone_zones": ["UTC-8", "UTC+0", "UTC+1", "UTC+8", "UTC+9", "UTC+10"]
+  }
+}
