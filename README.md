@@ -2,7 +2,6 @@
   <img src="https://img.shields.io/badge/🌐_QUANTUM-INTERNET-blueviolet?style=for-the-badge&logoColor=white" alt="Quantum Internet"/>
   <img src="https://img.shields.io/badge/⚛️_803-QUBITS-00d4aa?style=for-the-badge" alt="803 Qubits"/>
   <img src="https://img.shields.io/badge/🌍_4-COUNTRIES-ff6b6b?style=for-the-badge" alt="4 Countries"/>
-  <img src="https://img.shields.io/badge/🌐_133-LANGUAGES-green?style=for-the-badge" alt="133 Languages"/>
 </p>
 
 <h1 align="center">🔮 LUXBIN Quantum Internet</h1>
@@ -109,37 +108,11 @@ cd quantum-internet
 # Install
 pip install -r requirements.txt
 
-# Copy env and add your API keys
-cp .env.example .env
-
 # Launch 🚀
-python luxbin_quantum_service.py
+python quantum_internet_service.py
 ```
 
-Access the dashboard at `http://localhost:8765`
-
----
-
-## 🆕 v2.0 - Real Quantum Operations
-
-The latest version executes **actual quantum circuits** — no more `random.uniform()`:
-
-| Component | What It Does |
-|-----------|--------------|
-| **Real QRNG** | Hadamard + measure on IBM Quantum hardware |
-| **Real Bell Pairs** | Creates and measures actual entanglement |
-| **Real Teleportation** | Full quantum teleportation protocol |
-| **Proper Simulation** | Qiskit Aer with realistic noise models |
-| **Real AI Agents** | Connected to Claude, GPT, or Groq APIs |
-
-```python
-# Example: Generate quantum random bits
-from real_quantum_operations import get_qrng
-
-qrng = get_qrng()
-result = await qrng.generate_random_bits(8)
-# Returns actual quantum measurement results, not random.uniform()
-```
+Access the API at `http://localhost:8765`
 
 ---
 
@@ -152,12 +125,6 @@ result = await qrng.generate_random_bits(8)
 ✅ **REST API** — Simple HTTP interface to quantum operations
 ✅ **AI Integration** — 4 specialized agents
 ✅ **Simulation Fallback** — Works without hardware access too
-
----
-
-## 🌐 Multilingual Support
-
-LUXBIN Quantum Internet includes comprehensive multilingual support, enabling communication and interaction in 133 different languages. The integrated language translator allows users to translate queries, responses, and documentation seamlessly, powered by advanced AI translation services. This feature ensures accessibility and usability for a global audience, bridging language barriers in quantum computing.
 
 ---
 
