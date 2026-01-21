@@ -18,33 +18,23 @@ def main():
     print("🚀 Testing IBM Quantum connection...")
 
     try:
-        # Try IBMProvider first
-        from qiskit_ibm_provider import IBMProvider
-        provider = IBMProvider(token=token)
-        backends = provider.backends()
+        # Try QiskitRuntimeService (works with current versions)
+        from qiskit_ibm_runtime import QiskitRuntimeService
+        service = QiskitRuntimeService(channel='ibm_quantum_platform')
+        backends = service.backends()
         real_backends = [b for b in backends if not b.simulator]
-        print("✅ IBMProvider connection successful!")
+        print("✅ QiskitRuntimeService connection successful!")
         print(f"📊 Total backends: {len(backends)}")
         print(f"⚛️ Real quantum computers: {len(real_backends)}")
         for b in real_backends[:3]:
             print(f"  - {b.name}: {b.num_qubits} qubits")
-
     except Exception as e:
-        print(f"❌ IBMProvider failed: {e}")
-
-        # Try QiskitRuntimeService
-        try:
-            from qiskit_ibm_runtime import QiskitRuntimeService
-            service = QiskitRuntimeService(channel='ibm_quantum_platform')
-            backends = service.backends()
-            real_backends = [b for b in backends if not b.simulator]
-            print("✅ QiskitRuntimeService connection successful!")
-            print(f"📊 Total backends: {len(backends)}")
-            print(f"⚛️ Real quantum computers: {len(real_backends)}")
-            for b in real_backends[:3]:
-                print(f"  - {b.name}: {b.num_qubits} qubits")
-        except Exception as e2:
-            print(f"❌ QiskitRuntimeService also failed: {e2}")
+        print(f"❌ Connection failed: {e}")
+        print("💡 This could be due to:")
+        print("   - Invalid token")
+        print("   - Network issues")
+        print("   - Account restrictions")
+        print("   - API version incompatibility")
 
     print("\n💡 If connection works, your token is valid!")
     print("🎯 Next: run submit_ibm_job.py to submit a real job")

@@ -5,8 +5,8 @@ Submit a real quantum job to IBM Quantum for verification
 
 import os
 import sys
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
-from qiskit_ibm_provider import IBMProvider
+from qiskit import QuantumCircuit
+from qiskit_ibm_runtime import QiskitRuntimeService
 
 def main():
     # Set token
@@ -18,11 +18,11 @@ def main():
     print("🚀 Connecting to IBM Quantum...")
 
     try:
-        provider = IBMProvider(token=token)
+        service = QiskitRuntimeService(channel='ibm_quantum_platform')
         print("✅ Connected to IBM Quantum!")
 
         # Get available backends
-        backends = provider.backends()
+        backends = service.backends()
         real_backends = [b for b in backends if not b.simulator and b.status().operational]
         print(f"✅ Found {len(real_backends)} operational quantum computers")
 
@@ -42,22 +42,29 @@ def main():
         print("⚛️ Created quantum circuit: Hadamard + Measure")
         print("📊 Circuit will generate true quantum randomness")
 
-        # Transpile for the backend
-        transpiled_qc = transpile(qc, backend)
-
-        # Submit job using backend.run (works with free tier)
+        # Try to submit job
         print(f"📡 Submitting job to {backend.name}...")
-        job = backend.run(transpiled_qc, shots=1024)
-
-        job_id = job.job_id()
-        print("🎉 REAL QUANTUM JOB SUBMITTED SUCCESSFULLY!")
-        print(f"📋 Job ID: {job_id}")
-        print(f"🔗 Track job status: https://quantum.ibm.com/jobs/{job_id}")
-        print("⏳ Job submitted - check dashboard for completion")
-        print("💡 This job SHOULD appear on your IBM Quantum dashboard!")
+        try:
+            job = service.run(
+                circuits=[qc],
+                backend=backend.name,
+                shots=1024
+            )
+            job_id = job.job_id()
+            print("🎉 REAL QUANTUM JOB SUBMITTED SUCCESSFULLY!")
+            print(f"📋 Job ID: {job_id}")
+            print(f"🔗 Track job status: https://quantum.ibm.com/jobs/{job_id}")
+            print("⏳ Job submitted - check dashboard for completion")
+            print("💡 This should appear on your IBM Quantum dashboard!")
+        except Exception as e:
+            print(f"❌ Job submission failed: {e}")
+            print("💡 This might be due to:")
+            print("   - Free tier limitations")
+            print("   - Account not having job submission permissions")
+            print("   - Invalid token for job submission")
 
     except Exception as e:
-        print(f"❌ Failed: {e}")
+        print(f"❌ Connection failed: {e}")
 
 if __name__ == "__main__":
     main()
