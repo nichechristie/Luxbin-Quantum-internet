@@ -58,7 +58,9 @@ class RealQuantumRNG:
             # Try real hardware first
             if self.use_real_hardware:
                 try:
-                    self.service = QiskitRuntimeService(channel="ibm_quantum")
+                    self.service = QiskitRuntimeService(channel="ibm_quantum_platform")
+                    backends = self.service.backends()
+                    print(f"✅ Connected to IBM Quantum, found {len(backends)} backends")
                     # Get least busy backend
                     self.backend = self.service.least_busy(
                         simulator=False,
@@ -68,6 +70,7 @@ class RealQuantumRNG:
                     print(f"✅ QRNG using real hardware: {self.backend.name}")
                 except Exception as e:
                     print(f"⚠️  Could not connect to IBM Quantum: {e}")
+                    print("Falling back to simulation with realistic noise model")
                     self.use_real_hardware = False
 
             # Fallback to Aer simulator with noise model
