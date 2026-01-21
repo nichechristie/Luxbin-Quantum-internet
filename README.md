@@ -1,30 +1,12 @@
 <p align="center">
   <img src="https://img.shields.io/badge/🌐_QUANTUM-INTERNET-blueviolet?style=for-the-badge&logoColor=white" alt="Quantum Internet"/>
   <img src="https://img.shields.io/badge/⚛️_803-QUBITS-00d4aa?style=for-the-badge" alt="803 Qubits"/>
-  <img src="https://img.shields.io/badge/🇺🇸_USA-Quantum_Hub-blue?style=for-the-badge" alt="USA"/>
-  <img src="https://img.shields.io/badge/🇫🇷_FRANCE-Quantum_Hub-blue?style=for-the-badge" alt="France"/>
-  <img src="https://img.shields.io/badge/🇫🇮_FINLAND-Quantum_Hub-blue?style=for-the-badge" alt="Finland"/>
-  <img src="https://img.shields.io/badge/🇦🇺_AUSTRALIA-Quantum_Hub-blue?style=for-the-badge" alt="Australia"/>
+  <a href="https://translate.google.com/translate?sl=en&tl=en&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇺🇸_USA-Quantum_Hub-blue?style=for-the-badge" alt="USA"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=fr&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇫🇷_FRANCE-Quantum_Hub-blue?style=for-the-badge" alt="France"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=fi&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇫🇮_FINLAND-Quantum_Hub-blue?style=for-the-badge" alt="Finland"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=en&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇦🇺_AUSTRALIA-Quantum_Hub-blue?style=for-the-badge" alt="Australia"/></a>
   <a href="https://translate.google.com/translate?sl=en&tl=auto&u=https://github.com/nichechristie/Luxbun-Quantum-internet"><img src="https://img.shields.io/badge/🌐_Translate-This_Page-blue?style=for-the-badge" alt="Translate this page"></a>
   <img src="https://img.shields.io/badge/🌐_133-LANGUAGES-green?style=for-the-badge" alt="133 Languages"/>
-</p>
-
-<p align="center">
-  <select onchange="window.open('https://translate.google.com/translate?sl=en&tl='+this.value+'&u='+window.location.href)">
-    <option value="">🌐 Select Language to Translate</option>
-    <option value="es">🇪🇸 Spanish</option>
-    <option value="fr">🇫🇷 French</option>
-    <option value="de">🇩🇪 German</option>
-    <option value="it">🇮🇹 Italian</option>
-    <option value="pt">🇵🇹 Portuguese</option>
-    <option value="ru">🇷🇺 Russian</option>
-    <option value="ja">🇯🇵 Japanese</option>
-    <option value="ko">🇰🇷 Korean</option>
-    <option value="zh-CN">🇨🇳 Chinese (Simplified)</option>
-    <option value="ar">🇸🇦 Arabic</option>
-    <option value="hi">🇮🇳 Hindi</option>
-    <option value="auto">🌍 Auto Detect</option>
-  </select>
 </p>
 
 <h1 align="center">🔮 LUXBIN Quantum Internet</h1>
