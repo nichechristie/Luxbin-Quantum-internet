@@ -128,3 +128,5 @@ Thumbs.db
 *.tmp
 *.bak
 *.log
+.vercel
+.env*.local

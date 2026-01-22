@@ -1,6 +1,103 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
-import { MultiAgentChat } from '../components/MultiAgentChat'
+import { useEffect, useState, useRef } from 'react'
+
+function BackgroundVideos() {
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const videoRef = useRef(null);
+
+  const videos = [
+    "/bg-video-1.mp4",
+    "/bg-video-2.mp4",
+    "/bg-video-3.mp4",
+    "/bg-video-4.mp4",
+    "/bg-video-5.mp4",
+    "/bg-video-6.mp4"
+  ];
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => {
+      video.play().catch(err => {
+        const retry = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('click', retry);
+        };
+        document.addEventListener('click', retry, { once: true });
+      });
+    };
+
+    playVideo();
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) playVideo();
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [currentVideo]);
+
+  const handleVideoEnd = () => {
+    setCurrentVideo((prev) => (prev + 1) % videos.length);
+  };
+
+  return (
+    <div className="video-background">
+      <video
+        ref={videoRef}
+        key={currentVideo}
+        muted
+        playsInline
+        autoPlay
+        loop={false}
+        onEnded={handleVideoEnd}
+      >
+        <source src={videos[currentVideo]} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
+
+function FloatingParticles() {
+  const [particles, setParticles] = useState([]);
+
+  useEffect(() => {
+    const newParticles = [];
+    for (let i = 0; i < 15; i++) {
+      newParticles.push({
+        id: i,
+        size: Math.random() * 80 + 40,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        delay: Math.random() * 20,
+        duration: Math.random() * 10 + 15
+      });
+    }
+    setParticles(newParticles);
+  }, []);
+
+  return (
+    <div className="particles-container">
+      {particles.map((particle) => (
+        <div
+          key={particle.id}
+          className="particle"
+          style={{
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            left: particle.left,
+            top: particle.top,
+            animationDelay: `${particle.delay}s`,
+            animationDuration: `${particle.duration}s`
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
   useEffect(() => {
@@ -17,234 +114,259 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Quantum Internet | Global Quantum Computing Network</title>
-        <meta name="description" content="12+ quantum computers across 4 countries powering LUXBIN Light Language blockchain" />
+        <title>LUXBIN Quantum Internet | Educational Quantum Computing Toolkit</title>
+        <meta name="description" content="A Python toolkit for exploring quantum internet concepts through IBM Quantum cloud computing and local simulation" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container">
-        <div id="google_translate_element" style={{ textAlign: 'center', marginBottom: '20px' }}></div>
-        <header className="hero">
-          <div className="hero-badge">World's First Global Quantum Superposition</div>
-          <h1>Quantum Internet</h1>
-          <p className="tagline">12+ quantum computers across 4 countries powering LUXBIN Light Language</p>
-          <div className="hero-buttons">
-            <a href="https://github.com/mermaidnicheboutique-code/quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              View on GitHub
-            </a>
-            <a href="#achievement" className="btn btn-secondary">
-              See Achievement
-            </a>
+      <BackgroundVideos />
+      <div className="gradient-overlay" />
+      <FloatingParticles />
+
+      <main className="main-content">
+        {/* Google Translate at Top */}
+        <div id="google_translate_element" className="translate-bar"></div>
+
+        {/* Header */}
+        <header className="header">
+          <div className="logo">
+            <span className="logo-icon">⚛️</span>
+            <span className="logo-text">LUXBIN Quantum Internet</span>
           </div>
+          <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" target="_blank" rel="noopener noreferrer" className="github-btn">
+            View on GitHub
+          </a>
         </header>
 
-        <section className="stats">
-          <div className="stat-card">
-            <span className="stat-number">12+</span>
-            <span className="stat-label">Quantum Computers</span>
+        {/* Hero Section */}
+        <section className="hero">
+          <div className="hero-badge">Educational Quantum Computing Toolkit</div>
+          <h1 className="hero-title">LUXBIN Quantum Internet</h1>
+          <p className="hero-subtitle">
+            Exploring quantum internet concepts through IBM Quantum cloud computing and local simulation
+          </p>
+
+          {/* Transparency Notice */}
+          <div className="transparency-notice">
+            <span className="notice-icon">ℹ️</span>
+            <span>This is an <strong>educational toolkit</strong>, not actual quantum networking infrastructure</span>
           </div>
-          <div className="stat-card">
-            <span className="stat-number">4</span>
-            <span className="stat-label">Countries</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-number">3</span>
-            <span className="stat-label">Continents</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-number">4</span>
-            <span className="stat-label">AI Agents</span>
+
+          <div className="hero-buttons">
+            <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              ⭐ Star on GitHub
+            </a>
+            <a href="https://bsiegelwax.substack.com/p/luxbin-quantum-internet" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              📰 Read Review
+            </a>
           </div>
         </section>
 
-        <section id="achievement" className="achievement">
-          <h2>Global Quantum Superposition Achievement</h2>
-          <div className="quantum-state">
-            <code>Ψ_global = Σ |Hello World!⟩_LUXBIN ⊗ |entangled⟩_international</code>
-          </div>
-          <p>"Hello World!" successfully broadcasted in LUXBIN Light Language across 4 countries simultaneously!</p>
+        {/* What This Actually Is */}
+        <section className="info-section">
+          <h2>🔬 What This Project Actually Is</h2>
+          <blockquote className="review-quote">
+            "It's not what it says it is, but it's not nothing."
+            <cite>— Brian Siegelwax, The Quantum Dragon</cite>
+          </blockquote>
 
-          <div className="achievement-grid">
-            <div className="achievement-item">
-              <span className="flag">First Global Quantum Superposition</span>
-              <p>across multiple countries</p>
+          <div className="features-grid">
+            <div className="feature-card positive">
+              <span className="feature-icon">⚛️</span>
+              <h3>IBM Quantum Access</h3>
+              <p>Submit real quantum circuits to IBM Quantum cloud computers via their public API</p>
             </div>
-            <div className="achievement-item">
-              <span className="flag">LUXBIN Light Language</span>
-              <p>broadcasted internationally</p>
+            <div className="feature-card positive">
+              <span className="feature-icon">🔗</span>
+              <h3>Entanglement Protocols</h3>
+              <p>Educational implementations of Bell pairs, GHZ states, and teleportation</p>
             </div>
-            <div className="achievement-item">
-              <span className="flag">Photonic Quantum Computing</span>
-              <p>integrated globally</p>
+            <div className="feature-card positive">
+              <span className="feature-icon">💎</span>
+              <h3>NV-Center Simulation</h3>
+              <p>Software simulation of diamond nitrogen-vacancy center physics</p>
             </div>
-            <div className="achievement-item">
-              <span className="flag">Multi-Continental Entanglement</span>
-              <p>demonstrated</p>
+            <div className="feature-card positive">
+              <span className="feature-icon">📚</span>
+              <h3>Learning Resource</h3>
+              <p>Study quantum internet concepts using today's available tools</p>
             </div>
           </div>
         </section>
 
-        <section className="ai-agents">
-          <h2>AI Agents Securing the Network</h2>
-          <p className="section-subtitle">4 AI agents deployed to 4 countries simultaneously</p>
-          <div className="chat-cta">
-            <span className="chat-pulse"></span>
-            Chat with our AI agents - Click the avatars in the bottom right corner!
+        {/* What This Is NOT */}
+        <section className="warning-section">
+          <h2>⚠️ Transparency: What This Is NOT</h2>
+          <div className="warning-grid">
+            <div className="warning-card">
+              <span className="warning-icon">❌</span>
+              <h3>Not a Quantum Internet</h3>
+              <p>Uses classical internet (HTTPS) to access cloud quantum APIs</p>
+            </div>
+            <div className="warning-card">
+              <span className="warning-icon">❌</span>
+              <h3>Not Quantum Hardware</h3>
+              <p>No physical quantum channels or repeaters</p>
+            </div>
+            <div className="warning-card">
+              <span className="warning-icon">❌</span>
+              <h3>Not Persistent Entanglement</h3>
+              <p>Entanglement is created per-circuit-execution</p>
+            </div>
+            <div className="warning-card">
+              <span className="warning-icon">❌</span>
+              <h3>NV-Centers are Simulated</h3>
+              <p>Software models, not real hardware interfaces</p>
+            </div>
           </div>
-          <div className="agent-grid">
-            <div className="agent-card">
-              <div className="agent-flag">USA</div>
+        </section>
+
+        {/* How It Works Diagram */}
+        <section className="diagram-section">
+          <h2>🔧 How It Actually Works</h2>
+          <div className="architecture-diagram">
+            <div className="diagram-box client">
+              <span className="box-icon">💻</span>
+              <span className="box-title">LUXBIN Client</span>
+              <span className="box-subtitle">Your Computer</span>
+            </div>
+            <div className="diagram-arrow">
+              <span>Classical Internet</span>
+              <span className="arrow">→ HTTPS →</span>
+            </div>
+            <div className="diagram-box cloud">
+              <span className="box-icon">☁️</span>
+              <span className="box-title">IBM Quantum API</span>
+              <span className="box-subtitle">Cloud Service</span>
+            </div>
+          </div>
+          <p className="diagram-note">
+            <strong>This is a classical client</strong> that submits quantum circuits to cloud services over the regular internet.
+          </p>
+        </section>
+
+        {/* EIP Protocols */}
+        <section className="protocols-section">
+          <h2>🔬 Entanglement Protocol Implementations (EIPs)</h2>
+          <div className="protocols-grid">
+            <div className="protocol-card">
+              <div className="protocol-header">
+                <span className="protocol-name">EIP-001</span>
+                <span className="protocol-badge simulation">Simulation</span>
+              </div>
+              <h3>NV-Center Entanglement</h3>
+              <p>Simulated diamond defect physics</p>
+            </div>
+            <div className="protocol-card">
+              <div className="protocol-header">
+                <span className="protocol-name">EIP-002</span>
+                <span className="protocol-badge hardware">IBM Quantum</span>
+              </div>
+              <h3>Bell Pair Generation</h3>
+              <p>Create entangled qubit pairs</p>
+            </div>
+            <div className="protocol-card">
+              <div className="protocol-header">
+                <span className="protocol-name">EIP-003</span>
+                <span className="protocol-badge hardware">IBM Quantum</span>
+              </div>
+              <h3>GHZ State Generation</h3>
+              <p>Multi-qubit entanglement</p>
+            </div>
+            <div className="protocol-card">
+              <div className="protocol-header">
+                <span className="protocol-name">EIP-004</span>
+                <span className="protocol-badge hardware">IBM Quantum</span>
+              </div>
+              <h3>Quantum Teleportation</h3>
+              <p>State transfer protocol</p>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Agents */}
+        <section className="agents-section">
+          <h2>🤖 AI Agents</h2>
+          <p className="section-subtitle">Four AI agents integrated for quantum operations</p>
+          <div className="agents-grid">
+            <div className="agent-card aurora">
+              <span className="agent-flag">USA</span>
+              <span className="agent-emoji">🌅</span>
               <h3>Aurora AI</h3>
               <p className="agent-role">Creative Security</p>
-              <p className="agent-qubits">593 qubits protected</p>
-              <p className="agent-providers">IBM, IonQ, Rigetti</p>
             </div>
-            <div className="agent-card">
-              <div className="agent-flag">France</div>
+            <div className="agent-card atlas">
+              <span className="agent-flag">France</span>
+              <span className="agent-emoji">🗺️</span>
               <h3>Atlas AI</h3>
-              <p className="agent-role">Strategic Defense</p>
-              <p className="agent-qubits">32 qubits protected</p>
-              <p className="agent-providers">Quandela, Pasqal</p>
+              <p className="agent-role">Optimization</p>
             </div>
-            <div className="agent-card">
-              <div className="agent-flag">Finland</div>
+            <div className="agent-card ian">
+              <span className="agent-flag">Finland</span>
+              <span className="agent-emoji">📡</span>
               <h3>Ian AI</h3>
-              <p className="agent-role">Communication Security</p>
-              <p className="agent-qubits">25 qubits protected</p>
-              <p className="agent-providers">IQM</p>
+              <p className="agent-role">Communication</p>
             </div>
-            <div className="agent-card">
-              <div className="agent-flag">Australia</div>
+            <div className="agent-card morgan">
+              <span className="agent-flag">Australia</span>
+              <span className="agent-emoji">📊</span>
               <h3>Morgan AI</h3>
-              <p className="agent-role">ML Threat Detection</p>
-              <p className="agent-qubits">4 qubits protected</p>
-              <p className="agent-providers">Silicon Quantum</p>
-            </div>
-          </div>
-          <div className="entanglement-info">
-            <p>6 cross-country quantum entanglements | ~98% threat detection accuracy | 654 total qubits</p>
-          </div>
-        </section>
-
-        <section className="providers">
-          <h2>Quantum Providers Connected</h2>
-          <div className="provider-grid">
-            <div className="provider-card active">
-              <h3>USA</h3>
-              <ul>
-                <li>IBM Quantum (156 qubits)</li>
-                <li>IonQ (32 qubits)</li>
-                <li>Rigetti (80 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card active">
-              <h3>France</h3>
-              <ul>
-                <li>Quandela Cloud (12 qubits)</li>
-                <li>Pasqal Fresnel (20 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card active">
-              <h3>Finland</h3>
-              <ul>
-                <li>IQM Garnet (20 qubits)</li>
-                <li>IQM Apollo (5 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card active">
-              <h3>Australia</h3>
-              <ul>
-                <li>Silicon Quantum Computing (4 qubits)</li>
-              </ul>
+              <p className="agent-role">Analytics</p>
             </div>
           </div>
         </section>
 
-        <section className="coming-soon">
-          <h2>Expanding Soon</h2>
-          <div className="provider-grid">
-            <div className="provider-card pending">
-              <h3>China</h3>
-              <ul>
-                <li>Alibaba Tianti (10 qubits)</li>
-                <li>Baidu QPU (8 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card pending">
-              <h3>Japan</h3>
-              <ul>
-                <li>RIKEN (64 qubits)</li>
-              </ul>
-            </div>
-            <div className="provider-card pending">
-              <h3>UK</h3>
-              <ul>
-                <li>AWS Braket OQC (8 qubits)</li>
-                <li>Azure Quantinuum (20 qubits)</li>
-              </ul>
-            </div>
+        {/* Quick Start */}
+        <section className="quickstart-section">
+          <h2>🏃 Quick Start</h2>
+          <div className="code-block">
+            <pre>{`# Clone the repository
+git clone https://github.com/nichechristie/Luxbin-Quantum-internet.git
+cd Luxbin-Quantum-internet
+
+# Install dependencies
+pip install -e ".[all]"
+
+# Run on simulator (no IBM token needed)
+python run_eip_on_quantum.py EIP-002 --simulator
+
+# Run on real IBM Quantum hardware
+python run_eip_on_quantum.py EIP-002`}</pre>
           </div>
         </section>
 
-        <section className="technology">
-          <h2>Quantum Technologies</h2>
-          <div className="tech-grid">
-            <div className="tech-card">
-              <h3>Photonic</h3>
-              <p>Light-based quantum computing with Quandela</p>
-            </div>
-            <div className="tech-card">
-              <h3>Superconducting</h3>
-              <p>IBM, IQM, Rigetti quantum processors</p>
-            </div>
-            <div className="tech-card">
-              <h3>Ion Trap</h3>
-              <p>IonQ trapped-ion quantum computers</p>
-            </div>
-            <div className="tech-card">
-              <h3>Neutral Atom</h3>
-              <p>Pasqal neutral atom arrays</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="luxbin">
-          <h2>LUXBIN Light Language</h2>
-          <p>Messages encoded in photonic wavelengths across quantum computers worldwide</p>
-          <ul>
-            <li>11 photonic encodings per message</li>
-            <li>Simultaneous broadcast across all backends</li>
-            <li>Quantum-secured communication</li>
-            <li>Light-based blockchain validation</li>
+        {/* Why Quantum Internet Name */}
+        <section className="why-section">
+          <h2>❓ Why "Quantum Internet"?</h2>
+          <p>
+            The name reflects the project's <strong>aspirational goal</strong>: exploring and implementing
+            the protocols that would be used in a future quantum internet.
+          </p>
+          <p>The actual quantum internet will require:</p>
+          <ul className="requirements-list">
+            <li>🔌 Physical quantum channels (fiber optics or free-space)</li>
+            <li>📡 Quantum repeaters</li>
+            <li>🔗 Persistent entanglement distribution</li>
+            <li>💎 Specialized hardware (NV-centers, trapped ions, etc.)</li>
           </ul>
+          <p>This project simulates and studies these concepts using today's available tools.</p>
         </section>
 
-        <section className="docs">
-          <h2>Documentation</h2>
-          <div className="docs-grid">
-            <a href="https://github.com/mermaidnicheboutique-code/quantum-internet#readme" className="doc-card" target="_blank" rel="noopener noreferrer">
-              <h3>Getting Started</h3>
-              <p>Setup guide and quick start</p>
-            </a>
-            <a href="https://github.com/mermaidnicheboutique-code/quantum-internet/blob/main/QUANTUM_INTERNET_MULTI_PROVIDER_README.md" className="doc-card" target="_blank" rel="noopener noreferrer">
-              <h3>Multi-Provider Setup</h3>
-              <p>Connect to quantum backends</p>
-            </a>
-            <a href="https://github.com/mermaidnicheboutique-code/quantum-internet/blob/main/GLOBAL_QUANTUM_SUPERPOSITION_ACHIEVEMENT.md" className="doc-card" target="_blank" rel="noopener noreferrer">
-              <h3>Achievement Details</h3>
-              <p>World-first documentation</p>
-            </a>
-            <a href="https://github.com/mermaidnicheboutique-code/quantum-internet/blob/main/QUANTUM_WIFI_GUIDE.md" className="doc-card" target="_blank" rel="noopener noreferrer">
-              <h3>Quantum WiFi</h3>
-              <p>Wireless quantum connections</p>
-            </a>
+        {/* Footer */}
+        <footer className="footer">
+          <div className="footer-content">
+            <p>
+              <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" target="_blank" rel="noopener noreferrer">
+                LUXBIN Quantum Internet
+              </a>
+              {' '}by{' '}
+              <a href="https://github.com/nichechristie" target="_blank" rel="noopener noreferrer">
+                Nichole Christie
+              </a>
+            </p>
+            <p className="footer-tagline">Exploring quantum internet concepts through cloud computing and simulation</p>
           </div>
-        </section>
-
-        <footer>
-          <p>Quantum Internet by <a href="https://github.com/mermaidnicheboutique-code" target="_blank" rel="noopener noreferrer">Nichole Christie</a></p>
-          <p className="footer-sub">Powering the future of global quantum communication</p>
         </footer>
       </main>
 
@@ -257,46 +379,177 @@ export default function Home() {
 
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-          background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);
+          background: #0a0a0f;
           color: #fff;
           min-height: 100vh;
+          overflow-x: hidden;
         }
 
-        .container {
+        .video-background {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          z-index: 0;
+        }
+
+        .video-background video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.25;
+        }
+
+        .gradient-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(10, 10, 15, 0.6) 100%);
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .particles-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .particle {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(4px);
+          animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .main-content {
+          position: relative;
+          z-index: 10;
           max-width: 1200px;
           margin: 0 auto;
           padding: 20px;
         }
 
+        .translate-bar {
+          text-align: center;
+          padding: 15px;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(10px);
+          border-radius: 12px;
+          margin-bottom: 20px;
+        }
+
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          margin-bottom: 40px;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .logo-icon {
+          font-size: 2rem;
+        }
+
+        .logo-text {
+          font-size: 1.5rem;
+          font-weight: bold;
+          background: linear-gradient(90deg, #a855f7, #00d9f5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .github-btn {
+          padding: 12px 24px;
+          background: linear-gradient(90deg, #a855f7, #00d9f5);
+          color: #000;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: 600;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .github-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+        }
+
         .hero {
           text-align: center;
-          padding: 80px 20px;
+          padding: 60px 20px 80px;
         }
 
         .hero-badge {
           display: inline-block;
-          background: linear-gradient(90deg, #00f5a0, #00d9f5);
-          color: #000;
+          background: linear-gradient(90deg, rgba(168, 85, 247, 0.3), rgba(0, 217, 245, 0.3));
+          border: 1px solid rgba(168, 85, 247, 0.5);
+          color: #fff;
           padding: 8px 20px;
           border-radius: 20px;
           font-size: 14px;
           font-weight: 600;
-          margin-bottom: 20px;
+          margin-bottom: 24px;
         }
 
-        .hero h1 {
+        .hero-title {
           font-size: 4rem;
-          background: linear-gradient(90deg, #00f5a0, #00d9f5, #a855f7);
+          font-weight: bold;
+          background: linear-gradient(90deg, #a855f7, #00d9f5, #a855f7);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           margin-bottom: 20px;
+          line-height: 1.1;
         }
 
-        .tagline {
+        .hero-subtitle {
           font-size: 1.4rem;
           color: #a0a0c0;
+          max-width: 700px;
+          margin: 0 auto 30px;
+          line-height: 1.6;
+        }
+
+        .transparency-notice {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: rgba(251, 191, 36, 0.15);
+          border: 1px solid rgba(251, 191, 36, 0.4);
+          padding: 12px 24px;
+          border-radius: 12px;
           margin-bottom: 30px;
+          color: #fbbf24;
+        }
+
+        .notice-icon {
+          font-size: 1.2rem;
         }
 
         .hero-buttons {
@@ -307,10 +560,11 @@ export default function Home() {
         }
 
         .btn {
-          padding: 15px 30px;
-          border-radius: 8px;
+          padding: 16px 32px;
+          border-radius: 12px;
           text-decoration: none;
           font-weight: 600;
+          font-size: 1rem;
           transition: transform 0.2s, box-shadow 0.2s;
         }
 
@@ -319,8 +573,12 @@ export default function Home() {
         }
 
         .btn-primary {
-          background: linear-gradient(90deg, #00f5a0, #00d9f5);
+          background: linear-gradient(90deg, #a855f7, #00d9f5);
           color: #000;
+        }
+
+        .btn-primary:hover {
+          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
         }
 
         .btn-secondary {
@@ -329,34 +587,8 @@ export default function Home() {
           color: #00d9f5;
         }
 
-        .stats {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 20px;
-          padding: 40px 0;
-        }
-
-        .stat-card {
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 16px;
-          padding: 30px;
-          text-align: center;
-        }
-
-        .stat-number {
-          display: block;
-          font-size: 3rem;
-          font-weight: 700;
-          background: linear-gradient(90deg, #00f5a0, #00d9f5);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .stat-label {
-          color: #a0a0c0;
-          font-size: 0.9rem;
+        .btn-secondary:hover {
+          background: rgba(0, 217, 245, 0.1);
         }
 
         section {
@@ -364,7 +596,7 @@ export default function Home() {
         }
 
         h2 {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           text-align: center;
           margin-bottom: 40px;
           background: linear-gradient(90deg, #fff, #a0a0c0);
@@ -373,271 +605,318 @@ export default function Home() {
           background-clip: text;
         }
 
-        .achievement {
+        .review-quote {
           background: rgba(168, 85, 247, 0.1);
-          border-radius: 20px;
-          padding: 60px 40px;
-          text-align: center;
+          border-left: 4px solid #a855f7;
+          padding: 20px 30px;
+          margin: 0 auto 40px;
+          max-width: 600px;
+          border-radius: 0 12px 12px 0;
+          font-style: italic;
+          color: #c0c0e0;
         }
 
-        .quantum-state {
-          background: rgba(0,0,0,0.3);
-          border-radius: 10px;
-          padding: 20px;
-          margin: 30px 0;
-          overflow-x: auto;
-        }
-
-        .quantum-state code {
-          font-size: 1.2rem;
-          color: #00f5a0;
-        }
-
-        .achievement-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 20px;
-          margin-top: 40px;
-        }
-
-        .achievement-item {
-          background: rgba(255,255,255,0.05);
-          border-radius: 12px;
-          padding: 20px;
-        }
-
-        .achievement-item .flag {
-          color: #00f5a0;
-          font-weight: 600;
-        }
-
-        .provider-grid, .tech-grid, .docs-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
-        }
-
-        .provider-card, .tech-card, .doc-card {
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 16px;
-          padding: 25px;
-          transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .provider-card:hover, .tech-card:hover, .doc-card:hover {
-          transform: translateY(-5px);
-          border-color: #00d9f5;
-        }
-
-        .provider-card.active {
-          border-color: #00f5a0;
-        }
-
-        .provider-card.active h3::after {
-          content: " ✓";
-          color: #00f5a0;
-        }
-
-        .provider-card.pending {
-          opacity: 0.7;
-          border-style: dashed;
-        }
-
-        .provider-card.pending h3::after {
-          content: " (coming)";
-          font-size: 0.7rem;
-          color: #a0a0c0;
-        }
-
-        .coming-soon h2 {
-          font-size: 2rem;
-        }
-
-        .ai-agents {
-          background: rgba(0, 245, 160, 0.05);
-          border-radius: 20px;
-          padding: 60px 40px;
-          text-align: center;
-        }
-
-        .section-subtitle {
-          color: #a0a0c0;
-          margin-bottom: 20px;
-        }
-
-        .chat-cta {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: linear-gradient(90deg, rgba(0, 245, 160, 0.2), rgba(0, 217, 245, 0.2));
-          border: 1px solid rgba(0, 245, 160, 0.4);
-          padding: 12px 24px;
-          border-radius: 30px;
-          margin-bottom: 30px;
-          color: #00f5a0;
-          font-weight: 500;
-          animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        .chat-pulse {
-          width: 12px;
-          height: 12px;
-          background: #00f5a0;
-          border-radius: 50%;
-          animation: pulse-ring 1.5s infinite;
-        }
-
-        @keyframes pulse-ring {
-          0% { box-shadow: 0 0 0 0 rgba(0, 245, 160, 0.7); }
-          70% { box-shadow: 0 0 0 10px rgba(0, 245, 160, 0); }
-          100% { box-shadow: 0 0 0 0 rgba(0, 245, 160, 0); }
-        }
-
-        @keyframes glow {
-          from { box-shadow: 0 0 10px rgba(0, 245, 160, 0.3); }
-          to { box-shadow: 0 0 20px rgba(0, 245, 160, 0.5); }
-        }
-
-        .agent-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 20px;
-          margin-bottom: 30px;
-        }
-
-        .agent-card {
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(0, 245, 160, 0.3);
-          border-radius: 16px;
-          padding: 25px;
-          text-align: center;
-        }
-
-        .agent-card:hover {
-          transform: translateY(-5px);
-          border-color: #00f5a0;
-        }
-
-        .agent-flag {
-          font-size: 0.8rem;
-          color: #00d9f5;
-          margin-bottom: 10px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        }
-
-        .agent-card h3 {
-          color: #00f5a0;
-          margin-bottom: 10px;
-        }
-
-        .agent-role {
-          color: #fff;
-          font-weight: 500;
-          margin-bottom: 10px;
-        }
-
-        .agent-qubits {
+        .review-quote cite {
+          display: block;
+          margin-top: 10px;
+          font-style: normal;
           color: #a855f7;
           font-size: 0.9rem;
         }
 
-        .agent-providers {
-          color: #606080;
-          font-size: 0.8rem;
-          margin-top: 10px;
+        .features-grid, .warning-grid, .protocols-grid, .agents-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 20px;
         }
 
-        .entanglement-info {
-          background: rgba(0,0,0,0.2);
-          border-radius: 10px;
-          padding: 15px;
-          margin-top: 20px;
+        .feature-card, .warning-card, .protocol-card, .agent-card {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 16px;
+          padding: 28px;
+          transition: transform 0.2s, border-color 0.2s;
         }
 
-        .entanglement-info p {
+        .feature-card:hover, .protocol-card:hover, .agent-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(168, 85, 247, 0.5);
+        }
+
+        .feature-card.positive {
+          border-color: rgba(0, 245, 160, 0.3);
+        }
+
+        .feature-card.positive:hover {
+          border-color: rgba(0, 245, 160, 0.6);
+        }
+
+        .feature-icon {
+          font-size: 2.5rem;
+          display: block;
+          margin-bottom: 16px;
+        }
+
+        .feature-card h3, .warning-card h3, .protocol-card h3, .agent-card h3 {
           color: #00d9f5;
-          font-size: 0.9rem;
+          margin-bottom: 12px;
+          font-size: 1.2rem;
         }
 
-        .provider-card h3, .tech-card h3, .doc-card h3 {
-          color: #00d9f5;
-          margin-bottom: 15px;
-        }
-
-        .provider-card ul {
-          list-style: none;
-        }
-
-        .provider-card li {
-          padding: 5px 0;
-          color: #c0c0e0;
-        }
-
-        .doc-card {
-          text-decoration: none;
-          color: inherit;
-        }
-
-        .doc-card p {
+        .feature-card p, .warning-card p {
           color: #a0a0c0;
+          line-height: 1.6;
         }
 
-        .luxbin {
+        .warning-section {
+          background: rgba(239, 68, 68, 0.05);
+          border-radius: 20px;
+          padding: 60px 40px;
+          margin: 40px 0;
+        }
+
+        .warning-card {
+          border-color: rgba(239, 68, 68, 0.3);
           text-align: center;
         }
 
-        .luxbin ul {
+        .warning-icon {
+          font-size: 2rem;
+          display: block;
+          margin-bottom: 12px;
+        }
+
+        .warning-card h3 {
+          color: #ef4444;
+        }
+
+        .diagram-section {
+          text-align: center;
+        }
+
+        .architecture-diagram {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          margin: 40px 0;
+        }
+
+        .diagram-box {
+          background: rgba(255, 255, 255, 0.05);
+          border: 2px solid rgba(168, 85, 247, 0.4);
+          border-radius: 16px;
+          padding: 30px 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .diagram-box.cloud {
+          border-color: rgba(0, 217, 245, 0.4);
+        }
+
+        .box-icon {
+          font-size: 2.5rem;
+        }
+
+        .box-title {
+          font-weight: bold;
+          color: #fff;
+        }
+
+        .box-subtitle {
+          color: #a0a0c0;
+          font-size: 0.9rem;
+        }
+
+        .diagram-arrow {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #00f5a0;
+          font-size: 0.9rem;
+        }
+
+        .arrow {
+          font-size: 1.5rem;
+          letter-spacing: 4px;
+        }
+
+        .diagram-note {
+          color: #fbbf24;
+          background: rgba(251, 191, 36, 0.1);
+          padding: 16px 24px;
+          border-radius: 12px;
+          display: inline-block;
+        }
+
+        .protocol-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+        }
+
+        .protocol-name {
+          font-weight: bold;
+          color: #a855f7;
+        }
+
+        .protocol-badge {
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
+
+        .protocol-badge.simulation {
+          background: rgba(251, 191, 36, 0.2);
+          color: #fbbf24;
+        }
+
+        .protocol-badge.hardware {
+          background: rgba(0, 245, 160, 0.2);
+          color: #00f5a0;
+        }
+
+        .protocol-card p {
+          color: #a0a0c0;
+        }
+
+        .agents-section {
+          background: rgba(0, 245, 160, 0.05);
+          border-radius: 20px;
+          padding: 60px 40px;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          color: #a0a0c0;
+          margin-top: -20px;
+          margin-bottom: 40px;
+        }
+
+        .agent-card {
+          text-align: center;
+          position: relative;
+        }
+
+        .agent-flag {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          font-size: 0.75rem;
+          color: #00d9f5;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        .agent-emoji {
+          font-size: 3rem;
+          display: block;
+          margin-bottom: 16px;
+        }
+
+        .agent-role {
+          color: #a0a0c0;
+        }
+
+        .quickstart-section {
+          text-align: center;
+        }
+
+        .code-block {
+          background: rgba(0, 0, 0, 0.5);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 16px;
+          padding: 30px;
+          overflow-x: auto;
+          text-align: left;
+        }
+
+        .code-block pre {
+          font-family: 'Monaco', 'Menlo', monospace;
+          font-size: 0.9rem;
+          color: #00f5a0;
+          line-height: 1.8;
+          white-space: pre-wrap;
+        }
+
+        .why-section {
+          background: rgba(168, 85, 247, 0.05);
+          border-radius: 20px;
+          padding: 60px 40px;
+          text-align: center;
+        }
+
+        .why-section p {
+          color: #c0c0e0;
+          max-width: 700px;
+          margin: 0 auto 20px;
+          line-height: 1.8;
+        }
+
+        .requirements-list {
           list-style: none;
           display: inline-block;
           text-align: left;
-          margin-top: 20px;
+          margin: 20px 0;
         }
 
-        .luxbin li {
+        .requirements-list li {
           padding: 10px 0;
           color: #c0c0e0;
         }
 
-        .luxbin li::before {
-          content: "✦ ";
-          color: #00f5a0;
-        }
-
-        footer {
+        .footer {
           text-align: center;
           padding: 60px 20px;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          margin-top: 40px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          margin-top: 60px;
         }
 
-        footer a {
+        .footer a {
           color: #00d9f5;
           text-decoration: none;
         }
 
-        .footer-sub {
+        .footer a:hover {
+          text-decoration: underline;
+        }
+
+        .footer-tagline {
           color: #606080;
           margin-top: 10px;
           font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-          .hero h1 {
+          .hero-title {
             font-size: 2.5rem;
           }
-          .tagline {
+
+          .hero-subtitle {
             font-size: 1.1rem;
           }
-          .stat-number {
-            font-size: 2rem;
+
+          .header {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .architecture-diagram {
+            flex-direction: column;
+          }
+
+          .diagram-arrow {
+            transform: rotate(90deg);
           }
         }
       `}</style>
-
-      {/* Interactive AI Agents Chat */}
-      <MultiAgentChat />
     </>
   )
 }
