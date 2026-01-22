@@ -1,12 +1,35 @@
 <p align="center">
   <img src="https://img.shields.io/badge/🌐_QUANTUM-INTERNET-blueviolet?style=for-the-badge&logoColor=white" alt="Quantum Internet"/>
   <img src="https://img.shields.io/badge/⚛️_803-QUBITS-00d4aa?style=for-the-badge" alt="803 Qubits"/>
+  <img src="https://img.shields.io/badge/🌐_133-LANGUAGES-green?style=for-the-badge" alt="133 Languages"/>
+</p>
+
+<!-- Quantum Hub Countries -->
+<p align="center">
   <a href="https://translate.google.com/translate?sl=en&tl=en&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇺🇸_USA-Quantum_Hub-blue?style=for-the-badge" alt="USA"/></a>
   <a href="https://translate.google.com/translate?sl=en&tl=fr&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇫🇷_FRANCE-Quantum_Hub-blue?style=for-the-badge" alt="France"/></a>
   <a href="https://translate.google.com/translate?sl=en&tl=fi&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇫🇮_FINLAND-Quantum_Hub-blue?style=for-the-badge" alt="Finland"/></a>
   <a href="https://translate.google.com/translate?sl=en&tl=en&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇦🇺_AUSTRALIA-Quantum_Hub-blue?style=for-the-badge" alt="Australia"/></a>
-  <a href="https://translate.google.com/translate?sl=en&tl=auto&u=https://github.com/nichechristie/Luxbun-Quantum-internet"><img src="https://img.shields.io/badge/🌐_Translate-This_Page-blue?style=for-the-badge" alt="Translate this page"></a>
-  <img src="https://img.shields.io/badge/🌐_133-LANGUAGES-green?style=for-the-badge" alt="133 Languages"/>
+</p>
+
+<!-- Developer Languages - Row 1 -->
+<p align="center">
+  <a href="https://translate.google.com/translate?sl=en&tl=zh-CN&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇨🇳-中文-red?style=flat-square" alt="Chinese"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=es&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇪🇸-Español-yellow?style=flat-square" alt="Spanish"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=pt&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇧🇷-Português-green?style=flat-square" alt="Portuguese"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=ru&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇷🇺-Русский-blue?style=flat-square" alt="Russian"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=ja&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇯🇵-日本語-white?style=flat-square" alt="Japanese"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=ko&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇰🇷-한국어-blue?style=flat-square" alt="Korean"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=de&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇩🇪-Deutsch-black?style=flat-square" alt="German"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=hi&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇮🇳-हिन्दी-orange?style=flat-square" alt="Hindi"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=ar&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇸🇦-العربية-darkgreen?style=flat-square" alt="Arabic"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=tr&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇹🇷-Türkçe-red?style=flat-square" alt="Turkish"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=vi&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇻🇳-Tiếng_Việt-red?style=flat-square" alt="Vietnamese"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=pl&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇵🇱-Polski-white?style=flat-square" alt="Polish"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=uk&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇺🇦-Українська-blue?style=flat-square" alt="Ukrainian"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=nl&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇳🇱-Nederlands-orange?style=flat-square" alt="Dutch"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=it&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇮🇹-Italiano-green?style=flat-square" alt="Italian"/></a>
+  <a href="https://translate.google.com/translate?sl=en&tl=id&u=https://github.com/nichechristie/Luxbin-Quantum-internet"><img src="https://img.shields.io/badge/🇮🇩-Bahasa-red?style=flat-square" alt="Indonesian"/></a>
 </p>
 
 <h1 align="center">🔮 LUXBIN Quantum Internet</h1>
