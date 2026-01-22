@@ -252,6 +252,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - IonQ, Rigetti, Quandela, and other quantum providers
 - The global quantum computing community
 
+## Related Projects
+
+- **[Quantum Consciousness DB](https://github.com/nichechristie/quantum-consciousness-db)** - Consciousness research database
+- **[Quantum AI](https://github.com/nichechristie/quantum-ai)** - AI experiments with quantum computing
+- **[Quantum Wallet Security](https://github.com/nichechristie/quantum-wallet-security)** - Quantum-resistant wallet security
+- **[Quantum Game Dev AI](https://github.com/Nichechristie/QuantumGameDevAI)** - AI for quantum game development
+
 ## 📞 Support
 
 - **GitHub Issues**: [Report bugs](https://github.com/nichechristie/Luxbin-Quantum-internet/issues)
