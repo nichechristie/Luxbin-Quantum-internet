@@ -4,16 +4,20 @@ import { useState } from 'react'
 export default function Download() {
   const [paymentMethod, setPaymentMethod] = useState('')
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     if (paymentMethod === 'crypto') {
       // Integrate with luxbin-chain1 for crypto payment
       alert('Redirecting to Luxbin-Chain payment gateway...')
       window.location.href = 'https://github.com/mermaidnicheboutique-code/luxbin-chain1'
     } else if (paymentMethod === 'fiat') {
-      // Integrate Coinbase Onramp for credit card purchases
-      // Placeholder: In production, use Coinbase Onramp SDK or API
-      alert('Redirecting to Coinbase Onramp for credit card payment...')
-      window.open('https://www.coinbase.com/onramp', '_blank')  // Example link; integrate properly
+      // Integrate Stripe for credit card purchases
+      // Placeholder: In production, replace with actual Stripe session creation
+      alert('Processing credit card payment via Stripe...')
+      // Example: Create Stripe Checkout session (server-side needed)
+      // const response = await fetch('/api/create-checkout-session', { method: 'POST' });
+      // const { url } = await response.json();
+      // window.location.href = url;
+      window.open('https://checkout.stripe.com/pay/test_session_placeholder', '_blank')  // Placeholder
       // After payment, mint Luxbin tokens on-chain
     }
   }
@@ -54,13 +58,23 @@ export default function Download() {
             <br />
             <label style={{fontFamily: 'Inter, sans-serif'}}>
               <input type="radio" value="fiat" checked={paymentMethod === 'fiat'} onChange={(e) => setPaymentMethod(e.target.value)} />
-              Pay with Credit Card (via Coinbase Onramp)
+              Pay with Credit Card (via Stripe)
             </label>
           </div>
 
           <button onClick={handlePayment} style={{fontFamily: 'Inter, sans-serif', padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>
             Proceed to Payment
           </button>
+        </section>
+
+        <section style={{margin: '20px 0'}}>
+          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem'}}>Stripe Integration Notes</h2>
+          <p style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem'}}>For production, set up Stripe Checkout on your server:</p>
+          <ul style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem'}}>
+            <li>Create a Stripe account at stripe.com.</li>
+            <li>Use Stripe Checkout API to create sessions.</li>
+            <li>On successful payment, webhook triggers Luxbin token minting.</li>
+          </ul>
         </section>
 
         <section style={{margin: '20px 0'}}>
