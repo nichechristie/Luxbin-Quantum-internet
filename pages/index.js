@@ -108,7 +108,7 @@ export default function Home() {
         <section className="ai-agents-link" style={{padding: '20px', textAlign: 'center'}}>
           <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700, color: '#000'}}>AI Agents</h2>
           <p style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', color: '#000'}}>Interact with our AI agents securing the quantum network.</p>
-          <a href="https://nicheai.vercel.app" style={{fontFamily: 'Inter, sans-serif', color: '#007bff', textDecoration: 'none', fontSize: '1.2rem'}} target="_blank" rel="noopener noreferrer">Explore NicheAI App</a>
+          <a href="https://nicheai-nx5p.vercel.app" style={{fontFamily: 'Inter, sans-serif', color: '#007bff', textDecoration: 'none', fontSize: '1.2rem'}} target="_blank" rel="noopener noreferrer">Explore NicheAI App</a>
 
         </section>
 

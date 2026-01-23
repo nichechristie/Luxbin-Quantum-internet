@@ -30,7 +30,7 @@ export default function AIAgents() {
           <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700, color: '#000'}}>AI Agents Securing the Network</h2>
           <p className="section-subtitle" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', color: '#333'}}>4 AI agents deployed to 4 countries simultaneously</p>
           <div style={{margin: '20px 0'}}>
-            <a href="https://nicheai.vercel.app" style={{fontFamily: 'Inter, sans-serif', color: '#007bff', textDecoration: 'none', fontSize: '1.2rem'}} target="_blank" rel="noopener noreferrer">Explore NicheAI App</a>
+            <a href="https://nicheai-nx5p.vercel.app" style={{fontFamily: 'Inter, sans-serif', color: '#007bff', textDecoration: 'none', fontSize: '1.2rem'}} target="_blank" rel="noopener noreferrer">Explore NicheAI App</a>
           </div>
           <div className="chat-cta">
             <span className="chat-pulse"></span>
