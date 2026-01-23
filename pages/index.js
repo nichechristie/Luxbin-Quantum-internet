@@ -62,32 +62,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="ecosystem" className="achievement" style={{padding: '20px', color: '#000'}}>
-          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700}}>Quantum Networking Software Demonstration</h2>
-          <div className="quantum-state" style={{backgroundColor: 'rgba(0,0,0,0.1)', padding: '10px', borderRadius: '5px'}}>
-            <code style={{fontFamily: 'monospace', color: '#000'}}>Ψ_network = Σ |data⟩_photonic ⊗ |secure⟩_entangled</code>
-          </div>
-          <p style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem'}}>Software suite for quantum-inspired networking, broadcasting, and secure communication protocols.</p>
 
-          <div className="achievement-grid">
-            <div className="achievement-item">
-              <span className="flag">Photonic Broadcasting</span>
-              <p>simulated across networks</p>
-            </div>
-            <div className="achievement-item">
-              <span className="flag">AI Agent Integration</span>
-              <p>for network management</p>
-            </div>
-            <div className="achievement-item">
-              <span className="flag">Quantum Security</span>
-              <p>protocols implemented</p>
-            </div>
-            <div className="achievement-item">
-              <span className="flag">Multi-Agent Coordination</span>
-              <p>demonstrated</p>
-            </div>
-          </div>
-        </section>
 
         <section className="software-stack" style={{padding: '20px', color: '#000'}}>
           <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700}}>Integrated Quantum Ecosystem</h2>
