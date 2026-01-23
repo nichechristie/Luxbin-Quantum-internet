@@ -34,11 +34,11 @@ export default function Home() {
           <h1 style={{fontFamily: 'Inter, sans-serif', fontSize: '3rem', fontWeight: 700, color: '#000'}}>Quantum Internet</h1>
           <p className="tagline" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', color: '#000'}}>Software for photonic quantum networking, broadcasting, and secure communication</p>
           <div className="hero-buttons">
-            <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              View on GitHub
+            <a href="/download" className="btn btn-primary">
+              Download Software
             </a>
-            <a href="#ecosystem" className="btn btn-secondary">
-              Explore Ecosystem
+            <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              View on GitHub
             </a>
           </div>
         </header>
@@ -116,6 +116,7 @@ export default function Home() {
           </div>
           <h3 style={{fontFamily: 'Inter, sans-serif', fontSize: '1.8rem', fontWeight: 600, marginTop: '20px'}}>Key Features in This Repo</h3>
           <ul style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem', lineHeight: '1.6'}}>
+            <li><strong>Luxbin Translator:</strong> Translate classical software to photonic and diamond quantum circuits (luxbin_translator.py).</li>
             <li><strong>Photonic Broadcasting:</strong> Scripts for quantum audio, video, and pixel broadcasting (e.g., quantum_audio_broadcast.py, photonic_pixel_broadcast.py).</li>
             <li><strong>AI Agents:</strong> Multi-agent coordination for network management (e.g., multi_agent_ai_quantum_network.py, real_ai_agents.py).</li>
             <li><strong>Entanglement Simulation:</strong> Global photonic entanglement and quantum operations (e.g., global_photonic_entanglement.py, real_quantum_operations.py).</li>
