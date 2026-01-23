@@ -26,60 +26,60 @@ export default function Home() {
       <main className="container">
         <div id="google_translate_element" style={{ textAlign: 'center', marginBottom: '20px' }}></div>
         <header className="hero">
-          <div className="hero-badge">World's First Global Quantum Superposition</div>
+          <div className="hero-badge">Quantum Internet Software Suite</div>
           <h1>Quantum Internet</h1>
-          <p className="tagline">12+ quantum computers across 4 countries powering LUXBIN Light Language</p>
+          <p className="tagline">Software for photonic quantum networking, broadcasting, and secure communication</p>
           <div className="hero-buttons">
-            <a href="https://github.com/mermaidnicheboutique-code/quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
               View on GitHub
             </a>
-            <a href="#achievement" className="btn btn-secondary">
-              See Achievement
+            <a href="#ecosystem" className="btn btn-secondary">
+              Explore Ecosystem
             </a>
           </div>
         </header>
 
         <section className="stats">
           <div className="stat-card">
-            <span className="stat-number">12+</span>
-            <span className="stat-label">Quantum Computers</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-number">4</span>
-            <span className="stat-label">Countries</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-number">3</span>
-            <span className="stat-label">Continents</span>
+            <span className="stat-number">20+</span>
+            <span className="stat-label">Python Scripts</span>
           </div>
           <div className="stat-card">
             <span className="stat-number">4</span>
             <span className="stat-label">AI Agents</span>
           </div>
+          <div className="stat-card">
+            <span className="stat-number">Photonics</span>
+            <span className="stat-label">Broadcasting</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-number">Secure</span>
+            <span className="stat-label">Networking</span>
+          </div>
         </section>
 
-        <section id="achievement" className="achievement">
-          <h2>Global Quantum Superposition Achievement</h2>
+        <section id="ecosystem" className="achievement">
+          <h2>Quantum Networking Software Demonstration</h2>
           <div className="quantum-state">
-            <code>Ψ_global = Σ |Hello World!⟩_LUXBIN ⊗ |entangled⟩_international</code>
+            <code>Ψ_network = Σ |data⟩_photonic ⊗ |secure⟩_entangled</code>
           </div>
-          <p>"Hello World!" successfully broadcasted in LUXBIN Light Language across 4 countries simultaneously!</p>
+          <p>Software suite for quantum-inspired networking, broadcasting, and secure communication protocols.</p>
 
           <div className="achievement-grid">
             <div className="achievement-item">
-              <span className="flag">First Global Quantum Superposition</span>
-              <p>across multiple countries</p>
+              <span className="flag">Photonic Broadcasting</span>
+              <p>simulated across networks</p>
             </div>
             <div className="achievement-item">
-              <span className="flag">LUXBIN Light Language</span>
-              <p>broadcasted internationally</p>
+              <span className="flag">AI Agent Integration</span>
+              <p>for network management</p>
             </div>
             <div className="achievement-item">
-              <span className="flag">Photonic Quantum Computing</span>
-              <p>integrated globally</p>
+              <span className="flag">Quantum Security</span>
+              <p>protocols implemented</p>
             </div>
             <div className="achievement-item">
-              <span className="flag">Multi-Continental Entanglement</span>
+              <span className="flag">Multi-Agent Coordination</span>
               <p>demonstrated</p>
             </div>
           </div>
