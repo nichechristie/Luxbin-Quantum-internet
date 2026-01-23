@@ -29,10 +29,10 @@ export default function Home() {
 
       <main className="container" style={{position: 'relative', zIndex: 1}}>
         <div id="google_translate_element" style={{ textAlign: 'center', marginBottom: '20px' }}></div>
-        <header className="hero" style={{backgroundColor: 'rgba(255,255,255,0.9)', padding: '20px', borderRadius: '10px'}}>
+        <header className="hero" style={{padding: '20px'}}>
           <div className="hero-badge" style={{fontFamily: 'Inter, sans-serif', fontWeight: 600, color: '#fff', backgroundColor: '#007bff', padding: '5px 10px', borderRadius: '5px'}}>Quantum Internet Software Suite</div>
-          <h1 style={{fontFamily: 'Inter, sans-serif', fontSize: '3rem', fontWeight: 700, color: '#000'}}>Quantum Internet</h1>
-          <p className="tagline" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', color: '#333'}}>Software for photonic quantum networking, broadcasting, and secure communication</p>
+          <h1 style={{fontFamily: 'Inter, sans-serif', fontSize: '3rem', fontWeight: 700, color: '#000', textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>Quantum Internet</h1>
+          <p className="tagline" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', color: '#000', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Software for photonic quantum networking, broadcasting, and secure communication</p>
           <div className="hero-buttons">
             <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
               View on GitHub
@@ -43,31 +43,31 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="stats" style={{backgroundColor: 'rgba(255,255,255,0.9)', padding: '20px', borderRadius: '10px'}}>
+        <section className="stats" style={{padding: '20px'}}>
           <div className="stat-card" style={{color: '#000', textAlign: 'center'}}>
-            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block'}}>20+</span>
-            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem'}}>Python Scripts</span>
+            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block', textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>20+</span>
+            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Python Scripts</span>
           </div>
           <div className="stat-card" style={{color: '#000', textAlign: 'center'}}>
-            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block'}}>4</span>
-            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem'}}>AI Agents</span>
+            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block', textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>4</span>
+            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>AI Agents</span>
           </div>
           <div className="stat-card" style={{color: '#000', textAlign: 'center'}}>
-            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block'}}>Photonics</span>
-            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem'}}>Broadcasting</span>
+            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block', textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>Photonics</span>
+            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Broadcasting</span>
           </div>
           <div className="stat-card" style={{color: '#000', textAlign: 'center'}}>
-            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block'}}>Secure</span>
-            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem'}}>Networking</span>
+            <span className="stat-number" style={{fontFamily: 'Inter, sans-serif', fontSize: '2rem', fontWeight: 700, display: 'block', textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>Secure</span>
+            <span className="stat-label" style={{fontFamily: 'Inter, sans-serif', fontSize: '1rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Networking</span>
           </div>
         </section>
 
-        <section id="ecosystem" className="achievement" style={{backgroundColor: 'rgba(255,255,255,0.9)', padding: '20px', borderRadius: '10px', color: '#000'}}>
-          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700}}>Quantum Networking Software Demonstration</h2>
+        <section id="ecosystem" className="achievement" style={{padding: '20px', color: '#000'}}>
+          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700, textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>Quantum Networking Software Demonstration</h2>
           <div className="quantum-state" style={{backgroundColor: 'rgba(0,0,0,0.1)', padding: '10px', borderRadius: '5px'}}>
             <code style={{fontFamily: 'monospace', color: '#000'}}>Ψ_network = Σ |data⟩_photonic ⊗ |secure⟩_entangled</code>
           </div>
-          <p style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem'}}>Software suite for quantum-inspired networking, broadcasting, and secure communication protocols.</p>
+          <p style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Software suite for quantum-inspired networking, broadcasting, and secure communication protocols.</p>
 
           <div className="achievement-grid">
             <div className="achievement-item">
@@ -89,9 +89,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="software-stack" style={{backgroundColor: 'rgba(255,255,255,0.9)', padding: '20px', borderRadius: '10px', color: '#000'}}>
-          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700}}>Integrated Quantum Ecosystem</h2>
-          <p className="section-subtitle" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem'}}>Comprehensive software stack for quantum internet infrastructure</p>
+        <section className="software-stack" style={{padding: '20px', color: '#000'}}>
+          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700, textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>Integrated Quantum Ecosystem</h2>
+          <p className="section-subtitle" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Comprehensive software stack for quantum internet infrastructure</p>
           <div className="stack-grid">
             <div className="stack-item" style={{backgroundColor: 'rgba(255,255,255,0.1)', padding: '15px', borderRadius: '5px', margin: '10px'}}>
               <h3 style={{fontFamily: 'Inter, sans-serif', fontSize: '1.5rem', fontWeight: 600}}>Hybrid Quantum Processor</h3>
@@ -129,46 +129,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ai-agents-link" style={{backgroundColor: 'rgba(255,255,255,0.9)', padding: '20px', borderRadius: '10px', textAlign: 'center'}}>
-          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700, color: '#000'}}>AI Agents</h2>
-          <p className="section-subtitle" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>4 AI agents deployed to 4 countries simultaneously</p>
-          <div className="chat-cta">
-            <span className="chat-pulse"></span>
-            Chat with our AI agents - Click the avatars in the bottom right corner!
-          </div>
-          <div className="agent-grid">
-            <div className="agent-card">
-              <div className="agent-flag">USA</div>
-              <h3>Aurora AI</h3>
-              <p className="agent-role">Creative Security</p>
-              <p className="agent-qubits">593 qubits protected</p>
-              <p className="agent-providers">IBM, IonQ, Rigetti</p>
-            </div>
-            <div className="agent-card">
-              <div className="agent-flag">France</div>
-              <h3>Atlas AI</h3>
-              <p className="agent-role">Strategic Defense</p>
-              <p className="agent-qubits">32 qubits protected</p>
-              <p className="agent-providers">Quandela, Pasqal</p>
-            </div>
-            <div className="agent-card">
-              <div className="agent-flag">Finland</div>
-              <h3>Ian AI</h3>
-              <p className="agent-role">Communication Security</p>
-              <p className="agent-qubits">25 qubits protected</p>
-              <p className="agent-providers">IQM</p>
-            </div>
-            <div className="agent-card">
-              <div className="agent-flag">Australia</div>
-              <h3>Morgan AI</h3>
-              <p className="agent-role">ML Threat Detection</p>
-              <p className="agent-qubits">4 qubits protected</p>
-              <p className="agent-providers">Silicon Quantum</p>
-            </div>
-          </div>
-          <div className="entanglement-info">
-            <p>6 cross-country quantum entanglements | ~98% threat detection accuracy | 654 total qubits</p>
-          </div>
+        <section className="ai-agents-link" style={{padding: '20px', textAlign: 'center'}}>
+          <h2 style={{fontFamily: 'Inter, sans-serif', fontSize: '2.5rem', fontWeight: 700, color: '#000', textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>AI Agents</h2>
+          <p style={{fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', color: '#000', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Interact with our AI agents securing the quantum network.</p>
+          <a href="/ai-agents" style={{fontFamily: 'Inter, sans-serif', color: '#007bff', textDecoration: 'none', fontSize: '1.2rem', textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>Go to AI Agents Page</a>
+
         </section>
 
         <section className="providers">
