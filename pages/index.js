@@ -34,11 +34,11 @@ export default function Home() {
           <h1 style={{fontFamily: 'Inter, sans-serif', fontSize: '3rem', fontWeight: 700, color: '#000'}}>Quantum Internet</h1>
           <p className="tagline" style={{fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', color: '#000'}}>Software for photonic quantum networking, broadcasting, and secure communication</p>
           <div className="hero-buttons">
-            <a href="/download" className="btn btn-primary">
-              Download Software
+            <a href="https://github.com/nichechristie/Luxbin-Quantum-internet/archive/refs/heads/main.zip" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Free Download for Classical Computers
             </a>
-            <a href="https://github.com/nichechristie/Luxbin-Quantum-internet" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-              View on GitHub
+            <a href="/download" className="btn btn-secondary">
+              Paid Quantum Access
             </a>
           </div>
         </header>
