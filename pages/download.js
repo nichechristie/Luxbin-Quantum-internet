@@ -10,7 +10,11 @@ export default function Download() {
       alert('Redirecting to Luxbin-Chain payment gateway...')
       window.location.href = 'https://github.com/mermaidnicheboutique-code/luxbin-chain1'
     } else if (paymentMethod === 'fiat') {
-      alert('Fiat payment coming soon!')
+      // Integrate Coinbase Onramp for credit card purchases
+      // Placeholder: In production, use Coinbase Onramp SDK or API
+      alert('Redirecting to Coinbase Onramp for credit card payment...')
+      window.open('https://www.coinbase.com/onramp', '_blank')  // Example link; integrate properly
+      // After payment, mint Luxbin tokens on-chain
     }
   }
 
@@ -45,12 +49,12 @@ export default function Download() {
           <div style={{margin: '20px 0'}}>
             <label style={{fontFamily: 'Inter, sans-serif'}}>
               <input type="radio" value="crypto" checked={paymentMethod === 'crypto'} onChange={(e) => setPaymentMethod(e.target.value)} />
-              Pay with Crypto (Luxbin-Chain)
+              Pay with Luxbin-Chain Crypto (Direct)
             </label>
             <br />
             <label style={{fontFamily: 'Inter, sans-serif'}}>
               <input type="radio" value="fiat" checked={paymentMethod === 'fiat'} onChange={(e) => setPaymentMethod(e.target.value)} />
-              Pay with Fiat (Coming Soon)
+              Pay with Credit Card (via Coinbase Onramp)
             </label>
           </div>
 
