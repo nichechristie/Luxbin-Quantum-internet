@@ -21,7 +21,9 @@
     "ogDescription": "Secure quantum-powered blockchain with embedded wallets and gasless transactions.",
     "ogImageUrl": "https://quantum-internet.vercel.app/icon.jpg",
     "heroImageUrl": "https://quantum-internet.vercel.app/icon.jpg",
-    "screenshotUrls": ["https://quantum-internet.vercel.app/icon.jpg"],
+    "screenshotUrls": "https://quantum-internet.vercel.app/icon.jpg",
+    "imageURL": "https://quantum-internet.vercel.app/icon.jpg"
     "noindex": false
+   
   }
 }
