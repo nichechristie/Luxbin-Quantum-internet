@@ -1,0 +1,10 @@
+{
+  "quantumInternet": {
+    "success": false,
+    "error": "error:068000A8:asn1 encoding routines::wrong tag"
+  },
+  "nicheai": {
+    "success": false,
+    "error": "error:068000A8:asn1 encoding routines::wrong tag"
+  }
+}

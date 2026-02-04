@@ -12,12 +12,21 @@
     "@coinbase/cdp-hooks": "^0.0.78",
     "@coinbase/cdp-react": "^0.0.78",
     "@farcaster/miniapp-sdk": "^0.2.1",
-    "next": "16.1.1",
-    "react": "^19",
-    "react-dom": "^19",
-    "typescript": "^5",
+    "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/node": "^20"
+    "autoprefixer": "^10.4.24",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.1",
+    "ox": "^0.11.3",
+    "postcss": "^8.5.6",
+    "react": "^19",
+    "react-dom": "^19",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@coinbase/cdp-sdk": "^1.43.1",
+    "jsonwebtoken": "^9.0.3"
   }
 }
