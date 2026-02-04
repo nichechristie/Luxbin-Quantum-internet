@@ -36,8 +36,7 @@ export default function Home() {
           <div style={{margin: '20px 0', display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap'}}>
             <a href="https://luxbin-quantum-academy.vercel.app" className="academy-btn" target="_blank" rel="noopener noreferrer">🎓 Quantum Academy</a>
             <a href="https://nicheai-nx5p.vercel.app" className="nicheai-btn" target="_blank" rel="noopener noreferrer">🤖 NicheAI App</a>
-            <a href="/signup" className="api-btn" style={{background: 'linear-gradient(90deg, #8b5cf6, #06b6d4)', color: '#fff', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600}}>🔑 Get API Key</a>
-            <a href="/docs" className="docs-btn" style={{background: 'rgba(255,255,255,0.9)', color: '#333', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600}}>📖 API Docs</a>
+            <a href="https://luxbin-saas-website.vercel.app" className="api-btn" target="_blank" rel="noopener noreferrer" style={{background: 'linear-gradient(90deg, #8b5cf6, #06b6d4)', color: '#fff', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600}}>🔑 Developer API</a>
           </div>
           <div className="hero-buttons">
             <a href="https://github.com/nichechristie/Luxbin-Quantum-internet/archive/refs/heads/main.zip" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
