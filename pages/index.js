@@ -71,6 +71,7 @@ export default function Home() {
             <a href="https://nicheai-nx5p.vercel.app" className="nicheai-btn" target="_blank" rel="noopener noreferrer">🤖 NicheAI App</a>
             <a href="https://luxbin-saas-website.vercel.app" className="api-btn" target="_blank" rel="noopener noreferrer" style={{background: 'linear-gradient(90deg, #8b5cf6, #06b6d4)', color: '#fff', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600}}>🔑 Developer API</a>
             <a href="/wallet" style={{background: 'linear-gradient(90deg, #f59e0b, #ef4444)', color: '#fff', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '1.2rem'}}>💰 Luxbin Wallet</a>
+            <a href="https://nichechristie-site.vercel.app" target="_blank" rel="noopener noreferrer" style={{background: 'linear-gradient(90deg, #ec4899, #f97316)', color: '#fff', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600}}>👩‍💻 About the Developer</a>
           </div>
           <div className="hero-buttons">
             <a href="https://github.com/nichechristie/Luxbin-Quantum-internet/archive/refs/heads/main.zip" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
