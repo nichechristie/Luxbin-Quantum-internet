@@ -3,14 +3,14 @@ import { useEffect } from 'react'
 
 export default function Home() {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    script.async = true;
-    document.head.appendChild(script);
-
     window.googleTranslateElementInit = () => {
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     };
+
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.head.appendChild(script);
   }, []);
 
   return (
