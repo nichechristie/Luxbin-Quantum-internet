@@ -51,6 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(200).json(camelData);
   } catch (error) {
     console.error("Error fetching buy options:", error);
-    return res.status(500).json({ error: "Internal server error" });
+    const message = error instanceof Error ? error.message : "Internal server error";
+    return res.status(500).json({ error: message });
   }
 }
