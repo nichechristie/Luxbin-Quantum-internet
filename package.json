@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@coinbase/cdp-core": "^0.0.78",
-    "@coinbase/cdp-hooks": "^0.0.78",
-    "@coinbase/cdp-react": "^0.0.78",
+    "@coinbase/cdp-core": "^0.0.85",
+    "@coinbase/cdp-hooks": "^0.0.85",
+    "@coinbase/cdp-react": "^0.0.85",
     "@farcaster/miniapp-sdk": "^0.2.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^20",
@@ -21,8 +21,8 @@
     "next": "16.1.1",
     "ox": "^0.11.3",
     "postcss": "^8.5.6",
-    "react": "^19",
-    "react-dom": "^19",
+    "react": "19.1.5",
+    "react-dom": "19.1.5",
     "tailwindcss": "^4.1.18",
     "typescript": "^5"
   },
