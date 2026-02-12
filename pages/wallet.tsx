@@ -1,13 +1,8 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const CDPWrapper = dynamic(
-  () => import("../components/CDPWrapper"),
-  { ssr: false }
-);
-
-const EmbeddedWalletAuth = dynamic(
-  () => import("../components/EmbeddedWallet").then((mod) => mod.EmbeddedWalletAuth),
+const WalletApp = dynamic(
+  () => import("../components/WalletApp"),
   { ssr: false }
 );
 
@@ -27,15 +22,7 @@ export default function WalletPage() {
         background: "#0a0a0f",
         color: "white",
       }}>
-        <h1 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "8px" }}>
-          Luxbin Wallet
-        </h1>
-        <p style={{ color: "#999", marginBottom: "32px" }}>
-          Sign in with email or SMS to access your embedded wallet
-        </p>
-        <CDPWrapper>
-          <EmbeddedWalletAuth />
-        </CDPWrapper>
+        <WalletApp />
       </div>
     </>
   );
