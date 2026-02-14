@@ -8,7 +8,16 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "script-src 'self' 'unsafe-eval' 'unsafe-inline' https:; object-src 'none';",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https:",
+              "style-src 'self' 'unsafe-inline' https:",
+              "connect-src 'self' https:",
+              "frame-src 'self' https:",
+              "img-src 'self' data: https:",
+              "font-src 'self' data: https:",
+              "object-src 'none'",
+            ].join("; "),
           },
         ],
       },
