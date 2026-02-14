@@ -1,7 +1,10 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const WalletApp = dynamic(() => import("../components/WalletApp"), { ssr: false });
+const EmbeddedWalletAuth = dynamic(
+  () => import("../components/EmbeddedWallet").then((mod) => mod.EmbeddedWalletAuth),
+  { ssr: false }
+);
 
 export default function WalletPage() {
   return (
@@ -25,7 +28,7 @@ export default function WalletPage() {
         <p style={{ color: "#999", marginBottom: "32px" }}>
           Sign in with email or SMS to access your embedded wallet
         </p>
-        <WalletApp />
+        <EmbeddedWalletAuth />
       </div>
     </>
   );
